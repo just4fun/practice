@@ -1,0 +1,16 @@
+{
+  "name": "classics",
+  "version": "0.1.0",
+  "author": "talent <houritsunohikari@gmail.com>",
+  "description": "Try some classic frameworks/liarbries/tools.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/just4fun/classics.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.8.2",
+    "gulp": "^3.8.10",
+    "require-dir": "^0.1.0"
+  },
+  "license": "MIT"
+}
