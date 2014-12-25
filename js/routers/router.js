@@ -12,35 +12,30 @@ define([
     routes: {
       "home": "home",
       "about": "about",
-      "*else": "home"
+      "*else": "else"
     },
 
-    initialize: function($el) {
+    initialize: function ($el) {
       this.$el = $el;
-
-      this.homeView = new HomeView();
-      this.aboutView = new AboutView();
     },
 
-    switchView: function(view) {
+    switchView: function (view) {
       if (this.currentView) {
         this.currentView.remove();
       }
-
-      // occupied DOM first
-      this.$el.html(view.el);
-      // then switch to actual view in view.render()
-      view.render();
-
       this.currentView = view;
     },
 
     home: function() {
-      this.switchView(this.homeView);
+      this.switchView(new HomeView({$el: this.$el}));
     },
 
     about: function() {
-      this.switchView(this.aboutView);
+      this.switchView(new AboutView({$el: this.$el}));
+    },
+
+    else: function() {
+      this.navigate('#/home');
     }
 
   });

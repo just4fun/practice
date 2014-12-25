@@ -1,1 +1,5 @@
-home template
+<ul>
+    <% _.each(books, function(book){ %>
+    <li><%= book.title %></li>
+    <% }); %>
+</ul>
