@@ -21,17 +21,21 @@ define([
 
     switchView: function (view) {
       if (this.currentView) {
-        this.currentView.remove();
+        this.currentView.empty();
       }
+
+      this.$el.html(view.el);
+      view.render();
+
       this.currentView = view;
     },
 
     home: function() {
-      this.switchView(new HomeView({$el: this.$el}));
+      this.switchView(new HomeView());
     },
 
     about: function() {
-      this.switchView(new AboutView({$el: this.$el}));
+      this.switchView(new AboutView());
     },
 
     else: function() {

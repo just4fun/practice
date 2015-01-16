@@ -40,12 +40,29 @@ footer {
     display: none;
 }
 
+.main__div--content {
+    padding-bottom: 80px;
+}
+
 .search_area {
-    margin: 0 auto;
+    margin: 0 auto 50px;
     width: 50%;
 }
 
 .search_list {
-    margin: 50px auto;
-    width: 50%;
+    margin: 0 auto;
+}
+
+.img-wapper {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.img-wapper img {
+    width: 100px;
+    height: 140px;
+}
+
+.img-wapper div {
+    margin-top: 10px;
 }

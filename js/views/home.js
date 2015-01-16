@@ -4,9 +4,9 @@ define([
   'backbone',
   'base/backbone.baseview',
   'collections/books',
-  'text!templates/home_search.html',
-  'text!templates/home_result.html'
-], function ($, _, Backbone, BackboneBaseView, Books, homeSearchTemp, homeResultTemp) {
+  'views/item',
+  'text!templates/home.html'
+], function ($, _, Backbone, BackboneBaseView, Books, ItemView, homeTemp) {
 
   var HomeView = BackboneBaseView.extend({
 
@@ -15,24 +15,24 @@ define([
       "keyup #txt_search": "keyPress"
     },
 
-    initialize: function (options) {
-      this.$el = options.$el;
-      this.listenTo(Books, 'reset', this.subRender);
-      this.render();
+    initialize: function () {
+      this.listenTo(Books, 'reset', this.addAll);
     },
 
     render: function () {
-      this.$el.html(homeSearchTemp);
+      this.$el.html(homeTemp);
       return this;
     },
 
-    subRender: function () {
-      var list = Books.toJSON()[0].books;
-      var homeTemp = _.template(homeResultTemp);
-      var renderedTemp = homeTemp({books: list});
-      this.$el.children('#search_list').remove();
-      this.$el.append(renderedTemp);
+    addAll: function () {
+      $('#search_list').empty();
+      Books.each(this.addOne, this);
       $('.loadingbox').hide();
+    },
+
+    addOne: function (item) {
+      var view = new ItemView({ model: item });
+      $('#search_list').append(view.render().el);
     },
 
     search: function () {

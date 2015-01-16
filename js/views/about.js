@@ -14,9 +14,8 @@ define([
 
     },
 
-    initialize: function (options) {
-      this.$el = options.$el;
-      this.render();
+    initialize: function () {
+      
     },
 
     render: function () {
