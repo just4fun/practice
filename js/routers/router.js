@@ -20,9 +20,7 @@ define([
     },
 
     switchView: function (view) {
-      if (this.currentView) {
-        this.currentView.empty();
-      }
+      this.currentView && this.currentView.close();
 
       this.$el.html(view.el);
       view.render();

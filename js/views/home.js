@@ -32,6 +32,10 @@ define([
 
     addOne: function (item) {
       var view = new ItemView({ model: item });
+
+      this.views = this.views || [];
+      this.views.push(view);
+
       $('#search_list').append(view.render().el);
     },
 
