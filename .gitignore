@@ -1,5 +1,6 @@
 #directories to ignore
 
 .idea/
+dest/
 node_modules/
 bower_components/
