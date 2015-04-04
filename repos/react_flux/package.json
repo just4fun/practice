@@ -1,0 +1,20 @@
+{
+  "name": "iNew",
+  "version": "0.1.0",
+  "author": "talent <houritsunohikari@gmail.com>",
+  "description": "Try React and Flux.",
+  "devDependencies": {
+    "flux": "^2.0.1",
+    "react": "^0.13.1",
+    "browserify": "^9.0.7",
+    "watchify": "^3.1.0",
+    "reactify": "^1.1.0",
+    "browser-sync": "^1.8.2",
+    "require-dir": "^0.1.0",
+    "gulp": "^3.8.10",
+    "gulp-util": "^3.0.4",
+    "vinyl-source-stream": "^1.1.0",
+    "pretty-hrtime": "^1.0.0"
+  },
+  "license": "MIT"
+}
