@@ -1,6 +1,8 @@
 var React = require('react');
 var BookStore = require('../stores/BookStore');
 
+var BookItem = require('./BookItem.react');
+
 function getStateFromStores() {
   return {
     books: BookStore.getAll(),
@@ -11,7 +13,7 @@ function getStateFromStores() {
 var MainSection = React.createClass({
 
   getInitialState: function() {
-    return {};
+    return getStateFromStores();
   },
 
   componentDidMount: function() {
@@ -23,8 +25,17 @@ var MainSection = React.createClass({
   },
 
   render: function() {
+    var bookItems = this.state.books.map(function(book) {
+      return (
+        <BookItem book={book}>
+        </BookItem>
+      );
+    });
+
     return (
-      <div></div>
+      <div className='main-section'>
+        {bookItems}
+      </div>
     );
   },
 
