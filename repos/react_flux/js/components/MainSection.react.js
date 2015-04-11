@@ -20,7 +20,7 @@ var MainSection = React.createClass({
     BookStore.addChangeListener(this._onChange);
   },
 
-  componentWillMount: function() {
+  componentWillUnmount: function() {
     BookStore.removeChangeListener(this._onChange);
   },
 
