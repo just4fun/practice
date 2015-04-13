@@ -2,15 +2,22 @@ var Dispatcher = require('../core/Dispatcher');
 var ActionTypes = require('../constants/ActionTypes');
 var WebAPIUtils = require('../utils/WebAPIUtils');
 
-var BookSearchActions = {
+var BookGetActions = {
 
   search: function(keyword) {
     Dispatcher.handleViewAction({
       type: ActionTypes.SEARCH_BOOK
     });
-    WebAPIUtils.getSearchBooks(keyword);
+    WebAPIUtils.getAll(keyword);
+  },
+
+  get: function(bookId) {
+    Dispatcher.handleViewAction({
+      type: ActionTypes.SEARCH_BOOK
+    });
+    WebAPIUtils.get(keyword);
   }
 
 };
 
-module.exports = BookSearchActions;
+module.exports = BookGetActions;

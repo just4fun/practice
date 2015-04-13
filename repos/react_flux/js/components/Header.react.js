@@ -1,5 +1,5 @@
 var React = require('react');
-var BookSearchActions = require('../actions/BookSearchActions');
+var BookGetActions = require('../actions/BookGetActions');
 
 var ENTER_KEY_CODE = 13;
 
@@ -53,7 +53,7 @@ var Header = React.createClass({
   _onClick: function() {
     var keyword = this.state.keyword.trim();
     if (keyword) {
-      BookSearchActions.search(keyword);
+      BookGetActions.search(keyword);
     }
   }
 
