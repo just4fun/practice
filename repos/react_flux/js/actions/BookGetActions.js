@@ -6,16 +6,16 @@ var BookGetActions = {
 
   search: function(keyword) {
     Dispatcher.handleViewAction({
-      type: ActionTypes.SEARCH_BOOK
+      type: ActionTypes.SEARCH_BOOKS
     });
     WebAPIUtils.getAll(keyword);
   },
 
   get: function(bookId) {
     Dispatcher.handleViewAction({
-      type: ActionTypes.SEARCH_BOOK
+      type: ActionTypes.VIEW_BOOK
     });
-    WebAPIUtils.get(keyword);
+    WebAPIUtils.get(bookId);
   }
 
 };

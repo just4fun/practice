@@ -1,7 +1,8 @@
 var keyMirror = require('react/lib/keyMirror');
 
 var ActionTypes = keyMirror({
-  SEARCH_BOOK: null
+  VIEW_BOOK: null,
+  SEARCH_BOOKS: null
 });
 
 module.exports = ActionTypes;

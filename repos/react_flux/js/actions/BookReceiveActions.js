@@ -5,14 +5,14 @@ var BookReceiveActions = {
 
   receiveAll: function(result) {
     Dispatcher.handleServerAction({
-      type: ActionTypes.SEARCH_BOOK,
+      type: ActionTypes.SEARCH_BOOKS,
       data: result.data
     });
   },
 
   receive: function(result) {
     Dispatcher.handleServerAction({
-      type: ActionTypes.SEARCH_BOOK,
+      type: ActionTypes.VIEW_BOOK,
       data: result.data
     });
   }

@@ -1,9 +1,10 @@
 var React = require('react');
 var BookStore = require('../stores/BookStore');
+var BookGetActions = require('../actions/BookGetActions');
 
 function getStateFromStores() {
   return {
-    book:
+    book: BookStore.get()
   };
 }
 
@@ -13,10 +14,23 @@ var BookDetail = React.createClass({
     return getStateFromStores();
   },
 
+  componentDidMount: function() {
+    BookStore.addChangeListener(this._onChange);
+    BookGetActions.get(this.context.router.getCurrentParams().bookId);
+  },
+
+  componentWillUnmount: function() {
+    BookStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     return (
-      <div>{this.props.book.summary}</div>
+      <div>{this.state.book.summary}</div>
     );
+  },
+
+  _onChange: function() {
+    this.setState(getStateFromStores());
   }
 
 });

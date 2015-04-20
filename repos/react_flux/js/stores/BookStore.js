@@ -6,17 +6,26 @@ var PayloadSources = require('../constants/PayloadSources');
 var ActionTypes = require('../constants/ActionTypes');
 var CHANGE_EVENT = 'change';
 
+var _book = null;
 var _books = [];
 var _isLoading = false;
 
 var BookStore = assign({}, EventEmitter.prototype, {
 
-  init: function(books) {
+  initBooks: function(books) {
     _books = books;
+  },
+
+  initBook: function(book) {
+    _book = book;
   },
 
   isLoading: function() {
     return _isLoading;
+  },
+
+  get: function() {
+    return _book;
   },
 
   getAll: function() {
@@ -41,21 +50,27 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
 
   var action = payload.action;
 
-  switch(action.type) {
+  if (payload.source === PayloadSources.VIEW_ACTION) {
+    _isLoading = true;
+  }
+  else {
+    _isLoading = false;
 
-    case ActionTypes.SEARCH_BOOK:
-      if (payload.source === PayloadSources.VIEW_ACTION) {
-        _isLoading = true;
-      }
-      else {
-        _isLoading = false;
-        BookStore.init(action.data);
-      }
-      BookStore.emitChange();
-      break;
+    switch(action.type) {
 
-    default:
+      case ActionTypes.SEARCH_BOOKS:
+        BookStore.initBooks(action.data);
+        break;
 
+      case ActionTypes.VIEW_BOOK:
+        BookStore.initBook(action.data);
+        break;
+
+      default:
+
+    }
+
+    BookStore.emitChange();
   }
 
 });
