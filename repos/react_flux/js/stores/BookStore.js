@@ -6,7 +6,7 @@ var PayloadSources = require('../constants/PayloadSources');
 var ActionTypes = require('../constants/ActionTypes');
 var CHANGE_EVENT = 'change';
 
-var _book = null;
+var _book = {};
 var _books = [];
 var _isLoading = false;
 

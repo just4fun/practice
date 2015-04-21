@@ -9,9 +9,7 @@ var BookDetail = require('../components/BookDetail.react');
 
 var Routes = (
   <Route name='app' path='/' handler={App}>
-    <Route name='main-section' path='/' handler={MainSection}>
-      <Route name='book-detail' path='/books/:bookId' handler={BookDetail}/>
-    </Route>
+    <Route name='book-detail' path='/books/:bookId' handler={BookDetail}/>
     <DefaultRoute handler={MainSection}/>
   </Route>
 );

@@ -24,7 +24,7 @@ module.exports = {
       dataType: 'jsonp',
       success: function(data) {
         BookReceiveActions.receive({
-          data: data.books
+          data: data
         });
       }
     });

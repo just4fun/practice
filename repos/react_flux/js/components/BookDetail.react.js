@@ -16,7 +16,7 @@ var BookDetail = React.createClass({
 
   componentDidMount: function() {
     BookStore.addChangeListener(this._onChange);
-    BookGetActions.get(this.context.router.getCurrentParams().bookId);
+    BookGetActions.get(this.props.params.bookId);
   },
 
   componentWillUnmount: function() {
