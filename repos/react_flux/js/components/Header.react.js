@@ -1,4 +1,6 @@
 var React = require('react');
+var Router = require('react-router');
+var Link = Router.Link;
 var BookGetActions = require('../actions/BookGetActions');
 
 var ENTER_KEY_CODE = 13;
@@ -14,7 +16,10 @@ var Header = React.createClass({
   render: function() {
     return (
       <header className="navbar navbar-fixed-top">
-        <div className="container">
+        <div className="container clearfix">
+          <Link to="books" className="navbar-brand">
+            <img src="/favicon.ico" width="20px"/>
+          </Link>
           <div className="navbar__search">
             <div className="input-group">
               <input
