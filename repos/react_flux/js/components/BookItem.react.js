@@ -6,7 +6,7 @@ var BookItem = React.createClass({
 
   render: function() {
     return (
-      <Link to='book-detail' params={{bookId: this.props.book.id}} className="main-section__book clearfix">
+      <Link to='book-detail' params={{bookId: this.props.book.id}} className='main-section__book clearfix'>
         <div className='pull-left'>
           <img className='main-section__book-img' src={this.props.book.image}/>
         </div>

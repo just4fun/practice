@@ -15,26 +15,26 @@ var Header = React.createClass({
 
   render: function() {
     return (
-      <header className="navbar navbar-fixed-top">
-        <div className="container clearfix">
-          <Link to="books" className="navbar-brand">
-            <img src="/favicon.ico" width="20px"/>
+      <header className='navbar navbar-fixed-top'>
+        <div className='container clearfix'>
+          <Link to='books' className='navbar-brand'>
+            <img src='/favicon.ico' width='20px'/>
           </Link>
-          <div className="navbar__search">
-            <div className="input-group">
+          <div className='navbar__search'>
+            <div className='input-group'>
               <input
-                type="text"
-                className="form-control"
+                type='text'
+                className='form-control'
                 value={this.state.keyword}
                 onChange={this._onChange}
                 onKeyDown={this._onKeyDown}
-                placeholder="Search for books..." />
-              <span className="input-group-btn">
+                placeholder='Search for books...' />
+              <span className='input-group-btn'>
                 <button
-                  type="button"
-                  className="btn btn-default"
+                  type='button'
+                  className='btn btn-default'
                   onClick={this._onClick}>
-                    <i className="glyphicon glyphicon-search"></i>
+                    <i className='glyphicon glyphicon-search'></i>
                 </button>
               </span>
             </div>
