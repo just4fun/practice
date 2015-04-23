@@ -11,7 +11,7 @@ var BookItem = React.createClass({
           <img className='main-section__book-img' src={this.props.book.image}/>
         </div>
         <div className='main-section__book-info pull-left'>
-          <div className='main-section__book-title' title={this.props.book.title}>{this.props.book.title}</div>
+          <span className='main-section__book-title'>{this.props.book.title}</span>
         </div>
       </Link>
     );
