@@ -21,25 +21,30 @@ footer {
 }
 
 .main-section {
-  margin-top: 80px;
+  margin: 80px 0 50px;
 }
 
 .main-section__book {
+  color: #666;
   border-top: 1px dashed #ddd;
   padding: 10px;
-  height: 150px;
+  min-height: 150px;
   display: block;
   cursor: pointer;
 }
 
 .main-section__book-img {
   width: 90px;
+  margin-right: 10px;
 }
 
 .main-section__book-info {
   margin-left: 10px;
+  overflow: hidden;
+  zoom: 1;
 }
 
 .main-section__book-title {
   font-size: 16px;
+  margin-bottom: 10px
 }
