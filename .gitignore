@@ -1,7 +1,0 @@
-#files and directories to ignore
-
-.DS_Store
-.idea/
-dest/
-node_modules/
-bower_components/
