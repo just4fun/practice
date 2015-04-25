@@ -10,7 +10,7 @@ function getStateFromStores() {
   };
 }
 
-var Books = React.createClass({
+var BookList = React.createClass({
 
   getInitialState: function() {
     return getStateFromStores();
@@ -43,4 +43,4 @@ var Books = React.createClass({
 
 });
 
-module.exports = Books;
+module.exports = BookList;

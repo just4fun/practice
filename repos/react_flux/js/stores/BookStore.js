@@ -12,7 +12,7 @@ var _isLoading = false;
 
 var BookStore = assign({}, EventEmitter.prototype, {
 
-  initBooks: function(books) {
+  initBookList: function(books) {
     _books = books;
   },
 
@@ -59,7 +59,7 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
     switch(action.type) {
 
       case ActionTypes.SEARCH_BOOKS:
-        BookStore.initBooks(action.data);
+        BookStore.initBookList(action.data);
         break;
 
       case ActionTypes.VIEW_BOOK:
