@@ -1,10 +1,12 @@
 var React = require('react');
 var BookStore = require('../stores/BookStore');
 var BookGetActions = require('../actions/BookGetActions');
+var Loading = require('./Loading.react');
 
 function getStateFromStores() {
   return {
-    book: BookStore.get()
+    book: BookStore.get(),
+    isLoading: BookStore.isLoading()
   };
 }
 
@@ -24,6 +26,9 @@ var BookDetail = React.createClass({
   },
 
   render: function() {
+    if (this.state.isLoading) {
+      return <Loading />;
+    }
     return (
       <div>{this.state.book.summary}</div>
     );

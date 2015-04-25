@@ -69,10 +69,8 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
       default:
 
     }
-
-    BookStore.emitChange();
   }
-
+  BookStore.emitChange();
 });
 
 module.exports = BookStore;

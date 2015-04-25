@@ -2,6 +2,7 @@ var React = require('react');
 var Router = require('react-router');
 var BookStore = require('../stores/BookStore');
 var BookItem = require('./BookItem.react');
+var Loading = require('./Loading.react');
 
 function getStateFromStores() {
   return {
@@ -25,16 +26,18 @@ var BookList = React.createClass({
   },
 
   render: function() {
-    var bookItems = this.state.books.map(function(book) {
+    if (this.state.isLoading) {
+      return <Loading />;
+    }
+    var bookList = this.state.books.map(function(book) {
       return (
         <BookItem book={book}>
         </BookItem>
       );
     });
-
     return (
-      <div>{bookItems}</div>
-    );
+      <div>{bookList}</div>
+    )
   },
 
   _onChange: function() {
