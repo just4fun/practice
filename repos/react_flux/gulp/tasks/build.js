@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var config = require('../config');
 
-gulp.task('build', ['clean'], function() {
-  runSequence(['fonts', 'styles', 'imgs', 'templates', 'other']);
+gulp.task('build', ['clean'], function(cb) {
+  runSequence(['fonts', 'styles', 'imgs', 'templates', 'other'], cb);
 });
 
 gulp.task('fonts', function() {

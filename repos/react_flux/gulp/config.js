@@ -27,5 +27,13 @@ module.exports = {
   other: {
     src: './favicon.ico',
     dest: dest
+  },
+
+  deploy: {
+    files: dest + '/**'
+  },
+
+  browserify: {
+    watch: true
   }
 };

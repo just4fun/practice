@@ -5,6 +5,7 @@ var watchify = require('watchify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var bundleLogger = require('../utils/bundleLogger');
+var config = require('../config');
 
 var path = {
   ENTRY_POINT: './js/app.js',
@@ -29,8 +30,12 @@ gulp.task('browserify', function() {
       .pipe(browserSync.reload({stream: true}));
   };
 
-  b = watchify(b);
-  b.on('update', bundle);
+  if (config.browserify.watch) {
+    console.log('-------------------');
+    b = watchify(b);
+    b.on('update', bundle);
+  }
+
   bundleLogger.watch(path.OUTPUT);
 
   return bundle();
