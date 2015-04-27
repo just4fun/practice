@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var config = require('../config');
 
-gulp.task('copy', ['clean'], function() {
+gulp.task('build', ['clean'], function() {
   runSequence(['fonts', 'styles', 'imgs', 'templates', 'other']);
 });
 
