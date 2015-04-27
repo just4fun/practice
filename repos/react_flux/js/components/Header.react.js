@@ -18,7 +18,7 @@ var Header = React.createClass({
       <header className='navbar navbar-fixed-top'>
         <div className='container clearfix'>
           <Link to='books' className='navbar-brand'>
-            <img src='../../favicon.ico' width='20px'/>
+            <img src='../../img/logo.png' width='20px'/>
           </Link>
           <div className='navbar__search'>
             <div className='input-group'>
