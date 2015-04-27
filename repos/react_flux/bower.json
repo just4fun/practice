@@ -1,8 +1,0 @@
-{
-  "name": "iNew",
-  "version": "0.1.0",
-  "description": "Try React and Flux.",
-  "devDependencies": {
-    "bootstrap": "~3.3.2"
-  }
-}

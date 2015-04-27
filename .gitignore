@@ -2,6 +2,6 @@
 
 .DS_Store
 .idea/
-dest/
+build/
 node_modules/
 bower_components/

@@ -9,7 +9,7 @@ var bundleLogger = require('../utils/bundleLogger');
 var path = {
   ENTRY_POINT: './js/app.js',
   OUTPUT: 'bundle.js',
-  DEST: './dest'
+  DEST: './build/js'
 };
 
 gulp.task('browserify', function() {
