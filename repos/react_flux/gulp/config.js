@@ -30,7 +30,7 @@ module.exports = {
   },
 
   deploy: {
-    files: dest + '/**'
+    files: dest + '/**/*'
   },
 
   browserify: {
