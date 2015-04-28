@@ -6,6 +6,9 @@ var BookGetActions = require('../actions/BookGetActions');
 var ENTER_KEY_CODE = 13;
 
 var Header = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   getInitialState: function() {
     return {
@@ -58,6 +61,10 @@ var Header = React.createClass({
   _onClick: function() {
     var keyword = this.state.keyword.trim();
     if (keyword) {
+      var router = this.context.router;
+      if (router.getCurrentPath() != '/') {
+        router.transitionTo('books');
+      }
       BookGetActions.search(keyword);
     }
   }
