@@ -33,7 +33,7 @@ footer {
 }
 
 .main-section {
-  margin: 80px 0 50px;
+  margin: 70px 0 50px;
 }
 
 .main-section__book {
@@ -45,7 +45,8 @@ footer {
   cursor: pointer;
 }
 
-.main-section__book-img {
+.main-section__book-img,
+.book-detail--img {
   width: 90px;
   margin-right: 10px;
 }
@@ -59,4 +60,26 @@ footer {
 .main-section__book-title {
   font-size: 16px;
   margin-bottom: 10px
+}
+
+.book-detail {
+  padding: 0 10px;
+}
+
+.book-detail > div {
+  border-top: 1px dashed #ddd;
+  padding: 0 0 10px;
+}
+
+.book-detail > div:first-child {
+  border-top: none;
+}
+
+.book-detail p {
+  text-indent: 2em;
+  margin: 0;
+}
+
+.book-detail h4 {
+  color: #007722;
 }
