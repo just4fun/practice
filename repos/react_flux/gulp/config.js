@@ -1,12 +1,12 @@
 var dest = "./build";
 
 module.exports = {
-  fonts: {
+  font: {
     src: './node_modules/bootstrap/dist/fonts/**',
     dest: dest + '/fonts'
   },
 
-  styles: {
+  style: {
     src: [
       './node_modules/bootstrap/dist/css/bootstrap.css',
       './css/**'
@@ -14,12 +14,12 @@ module.exports = {
     dest: dest + '/css'
   },
 
-  imgs: {
+  img: {
     src: './img/**',
     dest: dest + '/img'
   },
 
-  templates: {
+  template: {
     src: './index.html',
     dest: dest
   },
@@ -33,7 +33,10 @@ module.exports = {
     files: dest + '/**/*'
   },
 
-  browserify: {
-    watch: true
+  production: {
+    jsSrc: dest + '/js/*.js',
+    cssSrc: dest + '/css/*.css',
+    jsDest: dest + '/js',
+    cssDest: dest + '/css'
   }
 };
