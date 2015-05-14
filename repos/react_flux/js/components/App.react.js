@@ -8,7 +8,7 @@ var App = React.createClass({
     return (
       <div>
         <Header />
-        <MainSection {...this.props}/>
+        <MainSection {...this.props} />
         <Footer />
       </div>
     );

@@ -29,6 +29,7 @@ var BookDetail = React.createClass({
     if (this.state.isLoading) {
       return <Loading />;
     }
+
     var book = this.state.book;
     var authors = book.author;
     if (authors) {
@@ -66,6 +67,7 @@ var BookDetail = React.createClass({
           <p>{book.author_intro}</p>
         </div>
     }
+
     return (
       <div className='book-detail'>
         <div>

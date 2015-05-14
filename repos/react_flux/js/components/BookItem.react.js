@@ -5,32 +5,33 @@ var Link = Router.Link;
 var BookItem = React.createClass({
 
   render: function() {
-    var subtitle = this.props.book.subtitle;
+    var book = this.props.book;
+    var subtitle = book.subtitle;
     if (subtitle) {
       subtitle = " : " + subtitle;
     }
-    var authors = this.props.book.author.join('、');
-    var publisher = this.props.book.publisher;
+    var authors = book.author.join('、');
+    var publisher = book.publisher;
     if (publisher) {
       publisher = " / " + publisher;
     }
-    var pubdate = this.props.book.pubdate;
+    var pubdate = book.pubdate;
     if (pubdate) {
       pubdate = " / " + pubdate;
     }
-    var price = this.props.book.price;
+    var price = book.price;
     if (price) {
       price = " / " + price;
     }
 
     return (
-      <Link to='book-detail' params={{bookId: this.props.book.id}} className='main-section__book clearfix'>
+      <Link to='book-detail' params={{bookId: book.id}} className='main-section__book clearfix'>
         <div className='pull-left'>
-          <img className='main-section__book-img' src={this.props.book.image}/>
+          <img className='main-section__book-img' src={book.image}/>
         </div>
         <div className='main-section__book-info'>
-        <div className='main-section__book-title'>{this.props.book.title}<small>{subtitle}</small></div>
-          <div>{authors}{publisher}{pubdate}{price}</div>
+        <div className='main-section__book-title'>{book.title}<small>{subtitle}</small></div>
+          <div>{authors} {publisher} {pubdate} {price}</div>
         </div>
       </Link>
     );
