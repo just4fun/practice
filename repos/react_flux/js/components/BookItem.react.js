@@ -25,15 +25,20 @@ var BookItem = React.createClass({
     }
 
     return (
-      <Link to='book-detail' params={{bookId: book.id}} className='main-section__book clearfix'>
-        <div className='pull-left'>
-          <img className='main-section__book-img' src={book.image}/>
+      <div className='main-section__book'>
+        <Link to='book-detail' params={{bookId: book.id}} className='main-section__book-info clearfix'>
+          <div className='pull-left'>
+            <img className='main-section__book-info--img' src={book.image}/>
+          </div>
+          <div className='main-section__book-info--description'>
+            <div className='main-section__book-info--title'>{book.title}<small>{subtitle}</small></div>
+            <div>{authors} {publisher} {pubdate} {price}</div>
+          </div>
+        </Link>
+        <div className='main-section__book-action'>
+          <span className='glyphicon glyphicon-heart'></span>
         </div>
-        <div className='main-section__book-info'>
-        <div className='main-section__book-title'>{book.title}<small>{subtitle}</small></div>
-          <div>{authors} {publisher} {pubdate} {price}</div>
-        </div>
-      </Link>
+      </div>
     );
   }
 

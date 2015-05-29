@@ -37,27 +37,47 @@ footer {
 }
 
 .main-section__book {
+
+}
+
+.main-section__book-info {
   color: #666;
-  border-top: 1px dashed #ddd;
   padding: 10px;
   min-height: 150px;
   display: block;
   cursor: pointer;
+  border-top: 1px dashed #ddd;
+  border-bottom: 1px dashed #ddd;
 }
 
-.main-section__book-img,
+.main-section__book-action {
+  padding: 10px;
+  text-align: center;
+  font-size: 26px;
+  background-color: #efefef;
+}
+
+.main-section__book-action span {
+  cursor: pointer;
+}
+
+.main-section__book:last-child .main-section__book-action {
+  border-bottom: 1px dashed #ddd;
+}
+
+.main-section__book-info--img,
 .book-detail--img {
   width: 90px;
   margin-right: 10px;
 }
 
-.main-section__book-info {
+.main-section__book-info--description {
   margin-left: 10px;
   overflow: hidden;
   zoom: 1;
 }
 
-.main-section__book-title {
+.main-section__book-info--title {
   font-size: 16px;
   margin-bottom: 10px
 }
