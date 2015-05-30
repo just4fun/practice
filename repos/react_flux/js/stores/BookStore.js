@@ -68,7 +68,6 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
 
       case ActionTypes.LIKE_BOOK:
         book.isLike = !book.isLike;
-        BookStore.initBook(book);
         break;
 
       default:

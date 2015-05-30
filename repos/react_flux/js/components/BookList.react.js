@@ -1,8 +1,11 @@
 var React = require('react');
 var Router = require('react-router');
+var Debug = require('debug');
 var BookStore = require('../stores/BookStore');
 var BookItem = require('./BookItem.react');
 var Loading = require('./Loading.react');
+
+var debug = Debug('iBook');
 
 function getStateFromStores() {
   return {
@@ -35,6 +38,8 @@ var BookList = React.createClass({
         </BookItem>
       );
     });
+
+    debug('render <BookList />', this.state.books);
     return (
       <div>{bookList}</div>
     )
