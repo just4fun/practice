@@ -3,10 +3,13 @@ var Router = require('react-router');
 var Debug = require('debug');
 var Link = Router.Link;
 var BookGetActions = require('../actions/BookGetActions');
+var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
 var debug = Debug('iBook');
 
 var BookItem = React.createClass({
+
+  mixins: [PureRenderMixin],
 
   render: function() {
     // book info
@@ -35,7 +38,7 @@ var BookItem = React.createClass({
       like_status += ' like';
     }
 
-    debug('render <BookItem />', book.title + ': '+ book);
+    debug('render <BookItem />', book.title);
     return (
       <div className='main-section__book'>
         <Link to='book-detail' params={{bookId: book.id}} className='main-section__book-info clearfix'>
