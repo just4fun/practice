@@ -16,6 +16,13 @@ var BookGetActions = {
       type: ActionTypes.VIEW_BOOK
     });
     WebAPIUtils.get(bookId);
+  },
+
+  like: function(book) {
+    Dispatcher.handleServerAction({
+      type: ActionTypes.LIKE_BOOK,
+      data: book
+    });
   }
 
 };

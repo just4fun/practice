@@ -1,10 +1,12 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var BookGetActions = require('../actions/BookGetActions');
 
 var BookItem = React.createClass({
 
   render: function() {
+    // book info
     var book = this.props.book;
     var subtitle = book.subtitle;
     if (subtitle) {
@@ -24,6 +26,12 @@ var BookItem = React.createClass({
       price = " / " + price;
     }
 
+    // book status
+    var like_status = 'glyphicon glyphicon-heart';
+    if (book.isLike) {
+      like_status += ' like';
+    }
+
     return (
       <div className='main-section__book'>
         <Link to='book-detail' params={{bookId: book.id}} className='main-section__book-info clearfix'>
@@ -36,10 +44,14 @@ var BookItem = React.createClass({
           </div>
         </Link>
         <div className='main-section__book-action'>
-          <span className='glyphicon glyphicon-heart'></span>
+          <span className={like_status} onClick={this._onClick.bind(this, book)}></span>
         </div>
       </div>
     );
+  },
+
+  _onClick: function (book) {
+    BookGetActions.like(book);
   }
 
 });

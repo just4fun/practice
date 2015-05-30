@@ -55,15 +55,20 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
   }
   else {
     _isLoading = false;
-
+    var book = action.data;
     switch(action.type) {
 
       case ActionTypes.SEARCH_BOOKS:
-        BookStore.initBookList(action.data);
+        BookStore.initBookList(book);
         break;
 
       case ActionTypes.VIEW_BOOK:
-        BookStore.initBook(action.data);
+        BookStore.initBook(book);
+        break;
+
+      case ActionTypes.LIKE_BOOK:
+        book.isLike = !book.isLike;
+        BookStore.initBook(book);
         break;
 
       default:

@@ -51,7 +51,7 @@ footer {
 }
 
 .main-section__book-action {
-  padding: 10px;
+  padding: 5px 0 0;
   text-align: center;
   font-size: 26px;
   background-color: #efefef;
@@ -59,6 +59,10 @@ footer {
 
 .main-section__book-action span {
   cursor: pointer;
+}
+
+.main-section__book-action span.like {
+  color: #FF413D;
 }
 
 .main-section__book:last-child .main-section__book-action {
