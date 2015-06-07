@@ -4,5 +4,6 @@
 .idea/
 .publish/
 build/
+coverage/
 node_modules/
 bower_components/
