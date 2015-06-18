@@ -37,6 +37,15 @@ module.exports = function(config) {
     reporters: ['mocha', 'coverage'],
 
 
+    // change Karma's debug.html to the mocha web reporter
+    client: {
+      mocha: {
+        reporter: 'html',
+        ui: 'bdd'
+      }
+    },
+
+
     // web server port
     port: 9876,
 
