@@ -5,6 +5,9 @@
   "description": "Set up an unit test infrastructure",
   "license": "MIT",
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-webserver": "^0.9.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.12",
     "karma-coverage": "^0.3.1",
