@@ -1,16 +1,23 @@
 {
-  "name": "classics",
+  "name": "backbone_require",
   "version": "0.1.0",
   "author": "talent <houritsunohikari@gmail.com>",
-  "description": "Try some classic frameworks/liarbries/tools.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/just4fun/classics.git"
-  },
+  "description": "An demo integrated BackboneJS with RequireJS",
   "devDependencies": {
     "browser-sync": "^1.8.2",
-    "gulp": "^3.8.10",
-    "require-dir": "^0.1.0"
+    "chai-jquery": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-webserver": "^0.9.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.4.2",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-requirejs": "^0.2.2",
+    "require-dir": "^0.1.0",
+    "requirejs": "^2.1.18"
   },
   "license": "MIT"
 }
