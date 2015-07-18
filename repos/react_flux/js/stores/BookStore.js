@@ -2,23 +2,17 @@ var Dispatcher = require('../core/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('react/lib/Object.assign');
 var PayloadSources = require('../constants/PayloadSources');
+var Immutable = require('immutable');
 
 var ActionTypes = require('../constants/ActionTypes');
 var CHANGE_EVENT = 'change';
 
+var _state = null;
 var _book = {};
-var _books = [];
+var _books = null;
 var _isLoading = false;
 
 var BookStore = assign({}, EventEmitter.prototype, {
-
-  initBookList: function(books) {
-    _books = books;
-  },
-
-  initBook: function(book) {
-    _book = book;
-  },
 
   isLoading: function() {
     return _isLoading;
@@ -55,26 +49,37 @@ BookStore.dispatchToken = Dispatcher.register(function(payload) {
   }
   else {
     _isLoading = false;
-    var book = action.data;
+
     switch(action.type) {
-
       case ActionTypes.SEARCH_BOOKS:
-        BookStore.initBookList(book);
+        _books = Immutable.fromJS(action.data);
         break;
-
       case ActionTypes.VIEW_BOOK:
-        BookStore.initBook(book);
+        _book = action.data;
         break;
-
       case ActionTypes.LIKE_BOOK:
-        book.isLike = !book.isLike;
+        var likeBookIndex = action.data.index;
+        var likeBook = action.data.book.toJS();
+        var books = BookStore.getAll();
+        // update the state
+        _books = books.updateIn(['books'], function(list) {
+          return list.update(likeBookIndex, null, function() {
+            likeBook.isLike = !likeBook.isLike;
+            return Immutable.fromJS(likeBook);
+          })
+        });
         break;
-
-      default:
-
     }
   }
   BookStore.emitChange();
 });
+
+BookStore.defaultState = {
+  books: []
+};
+
+_state = assign({}, BookStore.defaultState);
+// turn data to immutable
+_books = Immutable.fromJS(_state);
 
 module.exports = BookStore;

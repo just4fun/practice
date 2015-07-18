@@ -12,7 +12,7 @@ module.exports = {
       dataType: 'jsonp',
       success: function(data) {
         BookReceiveActions.receiveAll({
-          data: data.books
+          books: data.books
         });
       }
     });

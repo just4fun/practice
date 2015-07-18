@@ -6,7 +6,7 @@ var BookReceiveActions = {
   receiveAll: function(result) {
     Dispatcher.handleServerAction({
       type: ActionTypes.SEARCH_BOOKS,
-      data: result.data
+      data: result
     });
   },
 

@@ -4,17 +4,20 @@ var Debug = require('debug');
 var BookStore = require('../stores/BookStore');
 var BookItem = require('./BookItem.react');
 var Loading = require('./Loading.react');
+var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
 var debug = Debug('iBook');
 
 function getStateFromStores() {
   return {
-    books: BookStore.getAll(),
+    data: BookStore.getAll(),
     isLoading: BookStore.isLoading()
   };
 }
 
 var BookList = React.createClass({
+
+  mixins: [PureRenderMixin],
 
   getInitialState: function() {
     return getStateFromStores();
@@ -32,14 +35,20 @@ var BookList = React.createClass({
     if (this.state.isLoading) {
       return <Loading />;
     }
-    var bookList = this.state.books.map(function(book) {
+
+    var books = this.state.data.get('books');
+    if (!books || books.size === 0) {
+      return <div></div>;
+    }
+
+    var bookList = books.map(function(book, index) {
       return (
-        <BookItem book={book}>
+        <BookItem key={index} book={book} bookIndex={index}>
         </BookItem>
       );
     });
 
-    debug('render <BookList />', this.state.books);
+    debug('render <BookList />', books.toJS());
     return (
       <div>{bookList}</div>
     )

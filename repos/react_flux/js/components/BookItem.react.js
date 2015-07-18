@@ -14,51 +14,54 @@ var BookItem = React.createClass({
   render: function() {
     // book info
     var book = this.props.book;
-    var subtitle = book.subtitle;
+    var subtitle = book.get('subtitle');
     if (subtitle) {
       subtitle = " : " + subtitle;
     }
-    var authors = book.author.join('、');
-    var publisher = book.publisher;
+    var authors = book.get('author').join('、');
+    var publisher = book.get('publisher');
     if (publisher) {
       publisher = " / " + publisher;
     }
-    var pubdate = book.pubdate;
+    var pubdate = book.get('pubdate');
     if (pubdate) {
       pubdate = " / " + pubdate;
     }
-    var price = book.price;
+    var price = book.get('price');
     if (price) {
       price = " / " + price;
     }
 
     // book status
     var like_status = 'glyphicon glyphicon-heart';
-    if (book.isLike) {
+    if (book.get('isLike')) {
       like_status += ' like';
     }
 
-    debug('render <BookItem />', book.title);
+    debug('render <BookItem />', book.get('title'));
     return (
       <div className='main-section__book'>
-        <Link to='book-detail' params={{bookId: book.id}} className='main-section__book-info clearfix'>
+        <Link to='book-detail' params={{bookId: book.get('id')}} className='main-section__book-info clearfix'>
           <div className='pull-left'>
-            <img className='main-section__book-info--img' src={book.image}/>
+            <img className='main-section__book-info--img' src={book.get('image')}/>
           </div>
           <div className='main-section__book-info--description'>
-            <div className='main-section__book-info--title'>{book.title}<small>{subtitle}</small></div>
+            <div className='main-section__book-info--title'>{book.get('title')}<small>{subtitle}</small></div>
             <div>{authors} {publisher} {pubdate} {price}</div>
           </div>
         </Link>
         <div className='main-section__book-action'>
-          <span className={like_status} onClick={this._onClick.bind(this, book)}></span>
+          <span className={like_status} onClick={this._onClick.bind(this, this.props.bookIndex, this.props.book)}></span>
         </div>
       </div>
     );
   },
 
-  _onClick: function (book) {
-    BookGetActions.like(book);
+  _onClick: function (bookIndex, book) {
+    BookGetActions.like({
+      index: bookIndex,
+      book: book
+    });
   }
 
 });
