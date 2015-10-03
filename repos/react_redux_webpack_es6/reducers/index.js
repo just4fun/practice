@@ -1,8 +1,23 @@
-import { combineReducers } from 'redux';
-import searchub from './searchub';
+import {
+  REQUEST_REPO,
+  RECEIVE_REPO
+} from '../constants/ActionTypes';
 
-const rootReducer = combineReducers({
-  searchub
-});
-
-export default rootReducer;
+export default function repos(state = {
+  isFetching: false,
+  repos: []
+}, action) {
+  switch (action.type) {
+    case REQUEST_REPO:
+      return Object.assign({}, state, {
+        isFetching: true
+      });
+    case RECEIVE_REPO:
+      return Object.assign({}, state, {
+        isFetching: false,
+        repos: action.repos
+      });
+    default:
+      return state;
+  }
+}

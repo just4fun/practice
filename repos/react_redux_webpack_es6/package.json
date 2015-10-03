@@ -14,9 +14,11 @@
     "url": "https://github.com/just4fun/classics/issues"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.1.1",
     "react": "^0.13.3",
     "react-redux": "^2.0.0",
-    "redux": "^2.0.0"
+    "redux": "^2.0.0",
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.23",
