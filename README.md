@@ -1,7 +1,7 @@
 classics
 ========
 
-Try some classic/latest frameworks/liarbries/tools.
+Try some classic/latest frameworks/libraries/tools.
 
 ### Repo List
 
