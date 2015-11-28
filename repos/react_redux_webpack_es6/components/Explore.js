@@ -10,7 +10,7 @@ export default class Explore extends Component {
     return (
       <div>
         <input type='text' ref='input'/>
-        <button onClick={this._onExplore}>explore</button>
+        <button onClick={this._onExplore}>explore <i className='fa fa-search'></i></button>
       </div>
     );
   }
