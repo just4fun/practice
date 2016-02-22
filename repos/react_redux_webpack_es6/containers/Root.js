@@ -14,7 +14,7 @@ export default class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        {() => <SearchubApp /> }
+        <SearchubApp />
       </Provider>
     );
   }

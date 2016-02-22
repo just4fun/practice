@@ -1,13 +1,7 @@
-import keyMirror from 'react/lib/keyMirror';
+export const REQUEST_REPO = 'REQUEST_REPO';
+export const RECEIVE_REPO = 'RECEIVE_REPO';
+export const FAILURE_REPO = 'FAILURE_REPO';
 
-const ActionTypes = keyMirror({
-  REQUEST_REPO: null,
-  RECEIVE_REPO: null,
-  FAILURE_REPO: null,
-
-  REQUEST_LANGUAGE: null,
-  RECEIVE_LANGUAGE: null,
-  FAILURE_LANGUAGE: null
-});
-
-export default ActionTypes;
+export const REQUEST_LANGUAGE = 'REQUEST_LANGUAGE';
+export const RECEIVE_LANGUAGE = 'RECEIVE_LANGUAGE';
+export const FAILURE_LANGUAGE = 'FAILURE_LANGUAGE';

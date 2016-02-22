@@ -1,4 +1,5 @@
-import React, { Component, findDOMNode } from 'react';
+import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 
 export default class Explore extends Component {
   constructor(props) {
