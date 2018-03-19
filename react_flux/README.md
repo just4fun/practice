@@ -10,6 +10,6 @@ A simple demo which is based on [douban Book API](http://developers.douban.com/w
 * [Watchify](https://github.com/substack/watchify): Watch mode for browserify builds.
 * [Reactify](https://github.com/andreypopp/reactify): Browserify transform for JSX.
 
-**Related blog post:** http://just4fun.github.io/hexo-blog/2015/05/12/flux-architecture/
+**Related blog post:** https://just4fun.github.io/flux-architecture/
 
-###[Live Demo](http://just4fun.github.io/classics/)
+### [Live Demo](https://just4fun.github.io/practice/)
