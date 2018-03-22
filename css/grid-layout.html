@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        display: grid;
+        grid-template-areas: "header header"
+                             "nav main"
+                             "nav footer";
+        grid-template-rows: 80px 1fr 50px;
+        grid-template-columns: 150px 1fr;
+      }
+      header {
+        background-color: #8ca0ff;
+        grid-area: header;
+      }
+      nav {
+        background-color: #ffa08c;
+        grid-area: nav;
+      }
+      main {
+        background-color: #ffff64;
+        grid-area: main;
+      }
+      footer {
+        background-color: #8cffa0;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main area</main>
+    <footer>Footer</footer>
+  </body>
+</html>

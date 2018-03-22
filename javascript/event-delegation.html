@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+      }
+      .area {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      .outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        background-color: #D8BFD8;
+        position: relative;
+      }
+      .inner {
+        width: 150px;
+        height: 150px;
+        background-color: #FDE3E0;
+        position: relative;
+      }
+      span {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="area">
+        <div class="outer outer1">
+          <span>outer1</span>
+          <div class="inner inner1">
+            <span>inner1</span>
+          </div>
+        </div>
+        <div>Bubbling</div>
+      </div>
+      <div class="area">
+        <div class="outer outer2">
+          <span>outer2</span>
+          <div class="inner inner2">
+            <span>inner2</span>
+          </div>
+        </div>
+        <div>Capturing</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var outer1 = document.querySelector('.outer1');
+    var inner1 = document.querySelector('.inner1');
+
+    outer1.addEventListener('click', function() {
+      console.log('outer1');
+    }, false);
+    inner1.addEventListener('click', function(event) {
+      console.log('inner1');
+      // event.stopPropagation();
+    }, false);
+
+    var outer2 = document.querySelector('.outer2');
+    var inner2 = document.querySelector('.inner2');
+
+    outer2.addEventListener('click', function() {
+      console.log('outer2');
+      // event.stopPropagation();
+    }, true);
+    inner2.addEventListener('click', function() {
+      console.log('inner2');
+    }, true);
+  </script>
+</html>
